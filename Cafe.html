@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Cafe - An Indian Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fffaf0;
+            color: #3b2f1e;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+        header {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .nav-brand img {
+            height: 3rem;
+            border-radius: 50%;
+        }
+        .nav-brand span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #a3531c;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 1.1rem;
+        }
+        .nav-links a {
+            color: #a3531c;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ea580c;
+        }
+        .hero-bg {
+            background-image: url('/Assets/banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content {
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 2rem 3rem;
+            border-radius: 1rem;
+            color: #fff;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7c2d12;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .about-section {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+        .about-section p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #6b4f2a;
+        }
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+        .menu-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7c2d12;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .menu-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem 3rem;
+            }
+        }
+        .menu-item {
+            border-bottom: 2px dotted #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .menu-item-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a3531c;
+        }
+        .menu-item-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ea580c;
+        }
+        .menu-item-desc {
+            color: #6b4f2a;
+            margin-top: 0.5rem;
+        }
+        .contact-section {
+            background: #ffe5c7;
+            padding: 4rem 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .contact-logo img {
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+        }
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7c2d12;
+            margin-bottom: 1.5rem;
+        }
+        .contact-address {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-hours {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-hours span {
+            font-weight: 600;
+        }
+        .contact-btn {
+            background: #ea580c;
+            color: #fff;
+            font-weight: bold;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        .contact-btn:hover {
+            background: #a3531c;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #3b2f1e;
+            color: #fff;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="nav-brand">
+                <img src="/Assets/cafelogo.png" alt="Twin Cafe Logo" />
+                <span>Twin Cafe</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg">
+        <div class="hero-content">
+            <h1>A Taste of Tradition</h1>
+            <p>Authentic Indian Flavours, Served with Love.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2 class="section-title">Our Story</h2>
+            <p>
+                Welcome to Twin Cafe, where traditional Indian hospitality meets the modern cafe experience. Founded by two brothers with a passion for authentic coffee and wholesome food, our cafe is a tribute to the rich flavours of India. We source the finest twin coffee beans and local ingredients to bring you a menu that is both comforting and exciting.
+            </p>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section">
+            <h2 class="menu-title">Our Menu</h2>
+            <div class="menu-grid">
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">LEO Coffee</span>
+                        <span class="menu-item-price">₹120</span>
+                    </div>
+                    <p class="menu-item-desc">The legendary South Indian filter coffee, brewed to perfection.</p>
+                </div>
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">Chocolate Coffee</span>
+                        <span class="menu-item-price">₹180</span>
+                    </div>
+                    <p class="menu-item-desc">A rich blend of dark chocolate and our classic espresso shot.</p>
+                </div>
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">Twin Coffee</span>
+                        <span class="menu-item-price">₹200</span>
+                    </div>
+                    <p class="menu-item-desc">A unique blend of two coffee beans, creating a balanced and smooth flavor.</p>
+                </div>
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">Couple Coffee</span>
+                        <span class="menu-item-price">₹350</span>
+                    </div>
+                    <p class="menu-item-desc">Two coffees of your choice, served with a complimentary pastry to share.</p>
+                </div>
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">Great Tea</span>
+                        <span class="menu-item-price">₹150</span>
+                    </div>
+                    <p class="menu-item-desc">A premium selection of Darjeeling tea, known for its muscatel flavor.</p>
+                </div>
+                <!-- Menu Item -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-title">Twins Special</span>
+                        <span class="menu-item-price">₹250</span>
+                    </div>
+                    <p class="menu-item-desc">Our signature cold coffee, blended with secret ingredients and topped with cream.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-logo">
+                <img src="/Assets/cafelogo.png" alt="Twin Cafe Logo" />
+            </div>
+            <h2 class="contact-title">Visit Us</h2>
+            <p class="contact-address">42, Race Course Road, Coimbatore, India</p>
+            <p class="contact-hours">
+                <span>Mon - Sun:</span> 9am - 10pm
+            </p>
+            <a href="mailto:hello@twincafe.in" class="contact-btn">
+                Contact Us
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Twin Cafe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

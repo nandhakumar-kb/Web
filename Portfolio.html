@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandha Kumar K B - Personal Portfolio</title>
+    <style>
+        :root {
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --accent-color: #22d3ee;
+            --accent-hover: #06b6d4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header & Navigation */
+        .main-header {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(4px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: none;
+            /* Hidden on mobile */
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-hover);
+        }
+
+        #mobile-menu-button {
+            display: block;
+            /* Shown on mobile */
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        #mobile-menu {
+            background-color: var(--bg-secondary);
+            display: none;
+            /* Initially hidden */
+        }
+
+        #mobile-menu.active {
+            display: block;
+        }
+
+        #mobile-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-primary);
+            transition: background-color 0.3s ease;
+        }
+
+        #mobile-menu a:hover {
+            background-color: #374151;
+        }
+
+        /* Sections */
+        section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        #hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: var(--accent-hover);
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #0891b2;
+            /* cyan-600 */
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        #about .profile-image {
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+            width: 16rem;
+            height: 16rem;
+            object-fit: cover;
+        }
+
+        #about .about-text p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        /* Education Section */
+        .education-grid {
+            max-width: 56rem;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .education-card h3 {
+            font-size: 1.25rem;
+        }
+
+        .education-card .details {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .education-card .date {
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-secondary);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-0.5rem);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card .card-content {
+            padding: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background-color: #374151;
+            /* gray-700 */
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            max-width: 56rem;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .certification-item {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .certification-item p {
+            font-size: 1.125rem;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 42rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border: 1px solid #4b5563;
+            /* gray-600 */
+            border-radius: 0.375rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-hover);
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.3);
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            #hero h1 {
+                font-size: 4.5rem;
+            }
+
+            #hero .subtitle {
+                font-size: 1.5rem;
+            }
+
+            #mobile-menu-button {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            #about .about-content {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            #about .profile-image-container {
+                grid-column: span 2 / span 2;
+            }
+
+            #about .about-text {
+                grid-column: span 3 / span 3;
+            }
+
+            #about .profile-image {
+                width: 100%;
+                height: auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="container main-nav">
+            <a href="#" class="nav-brand">NK</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>NANDHA KUMAR K B</h1>
+            <p class="subtitle">Computer Science and Engineering Student</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-content">
+                <div class="profile-image-container">
+                    <img src="/Assets/NandhaKumar_23CS109.jpg" alt="Nandha Kumar K B" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align:left; margin-bottom:1.5rem;">About Me</h2>
+                    <p>
+                        Computer Science and Engineering student with hands-on experience in full-stack web development
+                        and a strong foundation in data structures and problem-solving.
+                    </p>
+                    <p>
+                        Built multiple React.js and Tailwind CSS-based applications focused on user-centric design and
+                        responsiveness. Eager to contribute to impactful front-end engineering projects in fast-paced,
+                        collaborative environments.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>KPR Institute of Engineering and Technology – Coimbatore, India</h3>
+                    <p class="details">B.E. in Computer Science and Engineering | CGPA: 8.55</p>
+                    <p class="date">Sep 2023 - Present</p>
+                </div>
+                <div class="education-card">
+                    <h3>Einsstein Matric Higher Secondary School - Namakkal, India</h3>
+                    <p class="details">Higher Secondary Education | Percentage: 92%</p>
+                    <p class="date">Jun 2021 - Apr 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="/Assets/smartcampus.png" alt="Smart Campus Web App">
+                    <div class="card-content">
+                        <h3>Smart Campus Web App</h3>
+                        <p>Developed an interactive front-end using React.js for a campus management system, enabling
+                            students and faculty to access timetables, resources, and notices.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="/Assets/greencart.png" alt="GreenCart Website">
+                    <div class="card-content">
+                        <h3>GreenCart Website</h3>
+                        <p>Developed the front-end of a grocery shopping web app using React.js and Tailwind CSS,
+                            enabling users to browse and purchase items with a responsive UI.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="/Assets/carrental.png" alt="CarRental Website">
+                    <div class="card-content">
+                        <h3>CarRental Website</h3>
+                        <p>Designed and implemented the client-side of a car rental platform using React.js, featuring
+                            booking forms, vehicle filters, and real-time availability checks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Full Stack Web Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">UI/UX</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Tailwind</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Developer Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Data & Analytics</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Microsoft Power BI</span>
+                        <span class="skill-tag">Microsoft Excel</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <p>Introduction to Industry 4.0 and IIoT – NPTEL</p>
+                </div>
+                <div class="certification-item">
+                    <p>Github Foundations – GitHub</p>
+                </div>
+                <div class="certification-item">
+                    <p>Python, Java, and C – HackerRank</p>
+                </div>
+                <div class="certification-item">
+                    <p>Javascript Fundamentals – Greatstack</p>
+                </div>
+                <div class="certification-item">
+                    <p>Microsoft Power BI – Great Learning</p>
+                </div>
+                <div class="certification-item">
+                    <p>Python – Infosys Springboard</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> nandhakumarkb2005@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 7200942020</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Coimbatore, India</p>
+                </div>
+                <form action="mailto:nandhakumarkb2005@gmail.com" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="body" rows="4" required></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="cta-button">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/nandhakumar-kb" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nandhakumar-kb" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/nandhakumar_kb/" target="_blank"><i class="fas fa-code"></i></a>
+                <a href="https://www.hackerrank.com/profile/nandhakumar_kb" target="_blank"><i
+                        class="fab fa-hackerrank"></i></a>
+            </div>
+            <p class="copyright">Nandha Kumar K B. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide: Paris, France</title>
+    <style>
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc;
+            color: #374151;
+        }
+
+        .hero-bg {
+            background-image: url('/Assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4rem 3rem;
+            border-radius: 1.5rem;
+            color: #fff;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-overlay h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-overlay p {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #1e293b;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .attractions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .attractions-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .attraction-card {
+            background: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .attraction-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .attraction-card img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+        }
+
+        .attraction-card .card-content {
+            padding: 1.5rem;
+        }
+
+        .attraction-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .attraction-card p {
+            color: #374151;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #fff;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" style="font-size:1.25rem;font-weight:bold;">Paris Guide</a>
+            <div style="display:flex;gap:2rem;">
+                <a href="#about">About</a>
+                <a href="#attractions">Attractions</a>
+                <a href="#food">Cuisine</a>
+                <a href="#plan">Plan Trip</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg">
+        <div class="hero-overlay">
+            <h1 style="font-size:3rem;font-weight:bold;">Explore Paris</h1>
+            <p style="font-size:1.5rem;margin-top:1rem;">The City of Light &amp; Love</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- About Section -->
+        <section id="about" style="text-align:center;max-width:700px;margin:0 auto 4rem auto;">
+            <h2 class="section-title">The Epitome of Romance and Art</h2>
+            <p style="font-size:1.15rem;line-height:1.7;">
+                Paris, the capital of France, is a global center for art, fashion, gastronomy, and culture. Its
+                19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond landmarks like the
+                Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture
+                and designer boutiques along the Rue du Faubourg Saint-Honoré.
+            </p>
+        </section>
+
+        <!-- Top Attractions Section -->
+        <section id="attractions" style="margin-bottom:4rem;">
+            <h2 class="section-title">Top Attractions</h2>
+            <div class="attractions-grid">
+                <!-- Attraction 1 -->
+                <div class="attraction-card">
+                    <img src="/Assets/tower.jpg" alt="Eiffel Tower">
+                    <div class="card-content">
+                        <h3>The Eiffel Tower</h3>
+                        <p>Ascend the iconic iron lattice tower for panoramic views of the city. A symbol of France and
+                            a marvel of engineering.</p>
+                    </div>
+                </div>
+                <!-- Attraction 2 -->
+                <div class="attraction-card">
+                    <img src="/Assets/museum.jpg" alt="Louvre Museum">
+                    <div class="card-content">
+                        <h3>Louvre Museum</h3>
+                        <p>Home to masterpieces like the Mona Lisa and the Venus de Milo, the Louvre is the world's
+                            largest art museum.</p>
+                    </div>
+                </div>
+                <!-- Attraction 3 -->
+                <div class="attraction-card">
+                    <img src="/Assets/dame.jpg" alt="Notre-Dame Cathedral">
+                    <div class="card-content">
+                        <h3>Notre-Dame Cathedral</h3>
+                        <p>A masterpiece of French Gothic architecture, this historic Catholic cathedral is a must-see
+                            on the Île de la Cité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>NK's Paris Travel Guide. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

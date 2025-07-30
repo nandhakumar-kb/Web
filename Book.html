@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Book: Ikigai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf8f0;
+            color: #444;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Lora', serif;
+        }
+
+        header {
+            background-color: #292524;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem 1.5rem;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        aside {
+            flex: 1 1 400px;
+            text-align: center;
+            min-width: 340px;
+            max-width: 440px;
+        }
+
+        aside img {
+            max-width: 340px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 2rem;
+        }
+
+        aside h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }
+
+        aside p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .buy-btn {
+            background-color: #134e4a;
+            color: #fff;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            margin-top: 1.5rem;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .buy-btn:hover {
+            background-color: #0f3c36;
+            transform: scale(1.05);
+        }
+
+        article {
+            flex: 2 1 500px;
+            min-width: 320px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: 2px solid #e7e5e4;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .diagram-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .diagram-box img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 0.75rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .diagram-box p {
+            color: #888;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        .quotes {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        blockquote {
+            border-left: 4px solid #134e4a;
+            padding-left: 1rem;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #444;
+            margin: 0;
+        }
+
+        footer {
+            background: #e7e5e4;
+            color: #666;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            aside,
+            article {
+                max-width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Favorite Book</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="grid">
+
+            <!-- Left Column: Book Cover & Details -->
+            <aside>
+                <div class="sticky">
+                    <img src="/Assets/ikigai.jpg" alt="Ikigai Book Cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x600/26a69a/ffffff?text=Ikigai';">
+                    <h2>Ikigai</h2>
+                    <p>by Héctor García & Francesc Miralles</p>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                </div>
+            </aside>
+
+            <!-- Right Column: Book Content -->
+            <article>
+
+                <!-- Summary Section -->
+                <section id="summary">
+                    <h3>Summary</h3>
+                    <p>
+                        "Ikigai: The Japanese Secret to a Long and Happy Life" explores the Japanese concept of
+                        "ikigai," which translates to "a reason for being." The book takes readers to Okinawa, Japan,
+                        one of the world's Blue Zones where people live exceptionally long lives.
+                    </p>
+                    <p>
+                        Through interviews with residents, the authors uncover the secrets to their longevity and
+                        happiness. They reveal how finding one's ikigai—the intersection of what you love, what you are
+                        good at, what the world needs, and what you can be paid for—is fundamental to a fulfilling life.
+                        The book provides practical tools to help readers discover their own ikigai and live with more
+                        purpose.
+                    </p>
+                </section>
+
+                <!-- The Ikigai Diagram Section -->
+                <section id="diagram">
+                    <h3>The Concept of Ikigai</h3>
+                    <div class="diagram-box">
+                        <img src="/Assets/diagram.png" alt="Ikigai Venn Diagram"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/cccccc?text=Ikigai+Diagram';">
+                        <p>The Ikigai model helps visualize the four overlapping elements that lead to a sense of
+                            purpose.</p>
+                    </div>
+                </section>
+
+                <!-- Why I Love It Section -->
+                <section id="why-i-love-it">
+                    <h3>Why I Love This Book</h3>
+                    <p>
+                        I love "Ikigai" for its simple yet profound wisdom. It's a calming and inspiring read that
+                        shifts your perspective on life, work, and happiness. The book doesn't just present a
+                        philosophy; it offers actionable advice on how to incorporate small, meaningful changes into
+                        your daily routine. It's a beautiful reminder that the secret to a happy life isn't about grand
+                        achievements, but about finding joy and purpose in the everyday.
+                    </p>
+                </section>
+
+                <!-- Key Quotes Section -->
+                <section id="quotes">
+                    <h3>Memorable Quotes</h3>
+                    <div class="quotes">
+                        <blockquote>
+                            <p>"Our ikigai is different for all of us, but one thing we have in common is that we are
+                                all searching for meaning."</p>
+                        </blockquote>
+                        <blockquote>
+                            <p>"The happiest people are not the ones who achieve the most. They are the ones who spend
+                                more time than others in a state of flow."</p>
+                        </blockquote>
+                        <blockquote>
+                            <p>"Essentials to happiness in this life are something to do, something to love, and
+                                something to hope for."</p>
+                        </blockquote>
+                    </div>
+                </section>
+
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>A Web Page designed by NK.</p>
