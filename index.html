@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            background: #111827;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .nav-links a {
+            background: #22d3ee;
+            color: #111827;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(34, 211, 238, 0.15);
+        }
+        .nav-links a:hover {
+            background: #06b6d4;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <div class="nav-links">
+        <a href="Portfolio.html">My Portfolio</a>
+        <a href="Book.html">My Favorite Book</a>
+        <a href="Travel.html">Travel Destination</a>
+        <a href="Daily.html">Daily Schedule</a>
+        <a href="Cafe.html">Fictional Cafe</a>
+    </div>
+</body>
+</html>
